@@ -26,9 +26,9 @@ const HeroSection = () => {
           <PictureBg src={HeroBackground2}/>
         </HeroBg>
         <HeroContent>
-          <HeroH1>Houses Renovation company</HeroH1>
+          <HeroH1>Profesjonalne usługi remontowe</HeroH1>
           <HeroParagraph>
-            Contact us and see more informations!
+            Sprawdź nasze usługi zapraszamy do kontaktu!
           </HeroParagraph>
           <HeroBtnWrapper>
             <Button onMouseEnter={onHover} onMouseLeave={onHover}>

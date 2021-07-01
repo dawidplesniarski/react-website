@@ -10,6 +10,13 @@ export const HeroContainer = styled.div`
   height: 500px;
   position: relative;
   z-index: 1;
+  
+  @media screen and (max-width: 650px) {
+    height: 300px;
+  }
+  @media screen and (max-width: 400px) {
+    height: 250px;
+  }
 `;
 
 export const HeroBg = styled.div`
@@ -47,11 +54,13 @@ export const HeroH1 = styled.h1`
   
   @media screen and (max-width: 768px) {
     font-size: 32px;
-    margin-top: -100px;
   }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 580px) {
     font-size: 24px;
-    margin-top: -170px;
+  }
+  @media screen and (max-width: 400px) {
+    font-size: 20px;
+    margin-top: -20px;
   }
 `;
 
@@ -63,13 +72,16 @@ export const HeroParagraph = styled.p`
   max-width: 600px;
   text-shadow: 1px 0 0 #7c7c7c, 0 -1px 0 #7c7c7c, 0 1px 0 #7c7c7c, -1px 0 0 #7c7c7c;
   
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 580px) {
     font-size: 18px;
+  }
+  
+  @media screen and (max-width: 400px) {
+    font-size: 16px;
   }
 `;
 
 export const HeroBtnWrapper = styled.div`
-  margin-top: 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
