@@ -70,7 +70,7 @@ export const NavItem = styled.li`
   height: 80px;
 `;
 
-export const NavLinks = styled(LinkR)`
+export const NavLinks = styled(LinkScroll)`
   color: #fff;
   display: flex;
   align-items: center;
@@ -82,4 +82,8 @@ export const NavLinks = styled(LinkR)`
   &:active {
     border-bottom: 3px solid #01bf71;
   }
+`;
+
+export const NavBarLogo = styled.img`
+  width: 150px;
 `;

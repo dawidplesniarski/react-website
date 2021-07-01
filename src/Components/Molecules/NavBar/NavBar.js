@@ -1,35 +1,38 @@
 import React from "react"
 import { FaBars } from "react-icons/fa"
-import { Nav, NavBarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks } from "./NavBarElements"
+import { Nav, NavBarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks, NavBarLogo } from "./NavBar.styles"
+import Logo from "../../../Assets/AppImages/logo.png"
 
 const NavBar = ({ toggle }) => {
   return (
     <>
       <Nav>
         <NavBarContainer>
-          <NavLogo to={"/"}>Logo</NavLogo>
+          <NavLogo to={"/"}>
+            <NavBarLogo src={Logo}/>
+          </NavLogo>
           <MobileIcon onClick={toggle}>
             <FaBars/>
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinks to={"/"}>
-                Home
+              <NavLinks to={"ServicesSection"}>
+                Strona główna
               </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to={"/about"}>
-                About
+                O nas
               </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to={"/contact"}>
-                Contact
+                Kontakt
               </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to={"/discover"}>
-                Discover
+                Usługi
               </NavLinks>
             </NavItem>
           </NavMenu>

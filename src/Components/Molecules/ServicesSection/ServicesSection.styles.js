@@ -61,3 +61,11 @@ export const StyledServicesItemTitle = styled.p`
   font-family: Montserrat,serif;
   font-weight: 500;
 `;
+
+export const StyledServicedItemDescription = styled.p`
+  font-family: Montserrat,serif;
+  font-weight: 200;
+  font-size: 12px;
+  margin-top: -10px;
+  text-align: center;
+`;
