@@ -22,7 +22,7 @@ export const StyledFooterContainer = styled.div`
   @media screen and (max-width: 850px) {
     flex-direction: column;
     justify-content: space-around;
-    height: 300px;
+    height: 200px;
       padding: 0 0 0 0;
   }
 `;
