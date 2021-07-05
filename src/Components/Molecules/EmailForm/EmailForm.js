@@ -3,6 +3,7 @@ import { StyledEmailFormContainer, StyledEmailFormWrapper } from "./EmailForm.st
 import Input from "../../Atoms/Input/Input"
 import { Button } from "../../Atoms/Button/Button.styles"
 import { ContactPageDescriptionH2 } from "../MapItem/MapItem.styles"
+import TextArea from "../../Atoms/TextArea/TextArea"
 
 const EmailForm = () => {
   const [fromName, setFromName] = useState("")
@@ -31,7 +32,9 @@ const EmailForm = () => {
           <Input placeholder={"Imię i nazwisko"} type={"text"} name={"name"}
                  onChange={el => setFromName(el.target.value)}/>
           <Input placeholder={"E-mail"} type={"email"} name={"email"} onChange={el => setFromEmail(el.target.value)}/>
-          <Input placeholder={"Wiadomość"} type={"text"} name={"message"} onChange={el => setMessage(el.target.value)}/>
+          {/*<Input placeholder={"Wiadomość"} type={"text"} name={"message"} onChange={el => setMessage(el.target.value)}/>*/}
+          <TextArea placeholder={"Wiadomość"} type={"text"} name={"message"}
+                    onChange={el => setMessage(el.target.value)} rows={3} maxLength={500}/>
           <Button disabled={fromName === "" || fromEmail === "" || message === ""} onClick={() => onSubmit()}>
             Wyślij wiadomość
           </Button>

@@ -34,7 +34,7 @@ export const ContactPageDescriptionContainer = styled.div`
 
 export const ContactPageDescriptionH1 = styled.h1`
   font-family: Montserrat,serif;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 500;
   
   @Media screen and (max-width: 768px) {
@@ -47,8 +47,8 @@ export const ContactPageDescriptionH2 = styled.h2`
   font-size: 24px;
   font-weight: 500;
   
-  @Media screen and (max-width: 768px) {
-      font-size: 28px;
+  @media screen and (max-width: 768px) {
+      font-size: 22px;
   }
 `;
 
@@ -58,7 +58,10 @@ export const ContactPageDescriptionParagraph = styled.p`
   font-weight: 300;
   text-align: center;
   
-  @Media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
       font-size: 16px;
+  }
+  @media  (max-width: 480px) {
+      font-size: 14px;
   }
 `;

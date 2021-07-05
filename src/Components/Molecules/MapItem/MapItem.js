@@ -31,7 +31,7 @@ const MapItem = () => {
     <>
       <MapItemContainer>
         <MapItemWrapper>
-          <MapContainer center={[markers[0].lat, markers[0].long]} zoom={13} style={{ width: 300, height: 400, zIndex: 1 }}>
+          <MapContainer center={[markers[0].lat, markers[0].long]} zoom={6} style={{ width: 300, height: 400, zIndex: 1 }}>
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"/>
