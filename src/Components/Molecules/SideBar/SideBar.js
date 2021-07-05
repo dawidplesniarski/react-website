@@ -1,7 +1,10 @@
 import React from "react"
 import { CloseIcon, Icon, SideBarContainer, SideBarLink, SideBarMenu, SideBarWrapper } from "./SideBar.styles"
+import { connect } from "react-redux"
+import LangButton from "../../Atoms/LangButton/LangButton"
+import { setLanguage } from "../../../Actions/langActions"
 
-const SideBar = ({ isOpen, toggle }) => {
+const SideBar = ({ isOpen, toggle, langReducer, setLanguage }) => {
   return (
     <SideBarContainer isOpen={isOpen} onClick={toggle}>
       <Icon onClick={toggle}>
@@ -10,10 +13,10 @@ const SideBar = ({ isOpen, toggle }) => {
       <SideBarWrapper>
         <SideBarMenu>
           <SideBarLink to={"/"}>
-            Strona główna
+            {langReducer.isPolish ? 'Strona główna' : 'Home'}
           </SideBarLink>
           <SideBarLink to={"/about"}>
-            About
+            {langReducer.isPolish ? 'O nas' : 'Über uns'}
           </SideBarLink>
           <SideBarLink to={"/discover"}>
             Discover
@@ -21,10 +24,21 @@ const SideBar = ({ isOpen, toggle }) => {
           <SideBarLink to={"/contact"}>
             Contact
           </SideBarLink>
+          <LangButton isPolish={langReducer.isPolish} onClick={() => setLanguage(!langReducer.isPolish)}/>
         </SideBarMenu>
       </SideBarWrapper>
     </SideBarContainer>
   )
 }
 
-export default SideBar
+const mapStateToProps = ({ langReducer }) => {
+  return { langReducer }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setLanguage: (isPolish) => dispatch(setLanguage(isPolish))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SideBar);

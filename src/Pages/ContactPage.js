@@ -8,9 +8,15 @@ import {
   ContactPageDescriptionH1, ContactPageDescriptionH2, ContactPageDescriptionParagraph, ContactPageDescriptionWrapper
 } from "../Components/Molecules/MapItem/MapItem.styles"
 import EmailForm from "../Components/Molecules/EmailForm/EmailForm"
-import LangButton from "../Components/Atoms/LangButton/LangButton"
+import { connect } from "react-redux"
+import {
+  contactPageDescription_DE,
+  contactPageDescription_PL,
+  contactPageTitle_DE,
+  contactPageTitle_PL
+} from "../Utils/dictionary"
 
-const ContactPage = () => {
+const ContactPage = ({ langReducer }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggle = () => {
@@ -23,12 +29,8 @@ const ContactPage = () => {
       <NavBar toggle={toggle}/>
       <ContactPageDescriptionWrapper>
         <ContactPageDescriptionContainer>
-          <ContactPageDescriptionH1>Jak możemy Ci pomóc?</ContactPageDescriptionH1>
-          <ContactPageDescriptionParagraph>
-            Jeśli masz jakieś pytania, zadzwoń, wyślij email lub skorzystaj z formularza. Działamy głównie w Krakowie oraz
-            okolicznych miejscowościach, ale jesteśmy otwarci na realizację projektów związanych z remontami i
-            wykończeniem wnętrz również w innych częściach kraju.
-          </ContactPageDescriptionParagraph>
+          <ContactPageDescriptionH1>{langReducer.isPolish ? contactPageTitle_PL : contactPageTitle_DE}</ContactPageDescriptionH1>
+          <ContactPageDescriptionParagraph>{langReducer.isPolish ? contactPageDescription_PL : contactPageDescription_DE}</ContactPageDescriptionParagraph>
           <ContactPageDescriptionH2>+43 699 10855287</ContactPageDescriptionH2>
           <ContactPageDescriptionH2>piotr.tyka@gmail.com</ContactPageDescriptionH2>
         </ContactPageDescriptionContainer>
@@ -40,4 +42,8 @@ const ContactPage = () => {
   )
 }
 
-export default ContactPage
+const mapStateToProps = ({ langReducer }) => {
+  return { langReducer }
+}
+
+export default connect(mapStateToProps)(ContactPage)

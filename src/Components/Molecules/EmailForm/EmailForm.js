@@ -5,8 +5,19 @@ import { Button } from "../../Atoms/Button/Button.styles"
 import { ContactPageDescriptionH2 } from "../MapItem/MapItem.styles"
 import TextArea from "../../Atoms/TextArea/TextArea"
 import { validateEmail } from "../../../Utils/utils"
+import { connect } from "react-redux"
+import {
+  emailFormButton_DE,
+  emailFormButton_PL,
+  emailFormEmail_DE,
+  emailFormEmail_PL, emailFormMessage_DE, emailFormMessage_PL,
+  emailFormTitle_DE,
+  emailFormTitle_PL,
+  emailFormUserData_DE,
+  emailFormUserData_PL
+} from "../../../Utils/dictionary"
 
-const EmailForm = () => {
+const EmailForm = ({langReducer}) => {
   const [fromName, setFromName] = useState("")
   const [fromEmail, setFromEmail] = useState("")
   const [message, setMessage] = useState("")
@@ -34,14 +45,14 @@ const EmailForm = () => {
     <>
       <StyledEmailFormContainer>
         <StyledEmailFormWrapper>
-          <ContactPageDescriptionH2>Wyślij zapytanie ofertowe!</ContactPageDescriptionH2>
-          <Input placeholder={"Imię i nazwisko"} type={"text"} name={"name"}
+          <ContactPageDescriptionH2>{langReducer.isPolish ? emailFormTitle_PL : emailFormTitle_DE}</ContactPageDescriptionH2>
+          <Input placeholder={langReducer.isPolish ? emailFormUserData_PL : emailFormUserData_DE} type={"text"} name={"name"}
                  onChange={el => setFromName(el.target.value)}/>
-          <Input placeholder={"E-mail"} type={"email"} name={"email"} onChange={el => setFromEmail(el.target.value)}/>
-          <TextArea placeholder={"Wiadomość"} type={"text"} name={"message"}
+          <Input placeholder={langReducer.isPolish ? emailFormEmail_PL : emailFormEmail_DE} type={"email"} name={"email"} onChange={el => setFromEmail(el.target.value)}/>
+          <TextArea placeholder={langReducer.isPolish ? emailFormMessage_PL : emailFormMessage_DE} type={"text"} name={"message"}
                     onChange={el => setMessage(el.target.value)} rows={3} maxLength={500}/>
           <Button disabled={fromName === "" || fromEmail === "" || message === ""} onClick={() => onSubmit()}>
-            Wyślij wiadomość
+            {langReducer.isPolish ? emailFormButton_PL : emailFormButton_DE}
           </Button>
         </StyledEmailFormWrapper>
       </StyledEmailFormContainer>
@@ -49,4 +60,8 @@ const EmailForm = () => {
   )
 }
 
-export default EmailForm
+const mapStateToProps = ({langReducer}) => {
+  return {langReducer};
+}
+
+export default connect(mapStateToProps)(EmailForm);
