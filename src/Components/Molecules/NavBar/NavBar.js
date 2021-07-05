@@ -12,8 +12,11 @@ import {
   NavScroll
 } from "./NavBar.styles"
 import Logo from "../../../Assets/AppImages/logo.png"
+import LangButton from "../../Atoms/LangButton/LangButton"
+import { connect } from "react-redux"
+import { setLanguage } from "../../../Actions/langActions"
 
-const NavBar = ({ toggle }) => {
+const NavBar = ({ toggle, langReducer, setLanguage }) => {
   return (
     <>
       <Nav>
@@ -45,6 +48,9 @@ const NavBar = ({ toggle }) => {
                 Usługi
               </NavScroll>
             </NavItem>
+            <NavItem>
+              <LangButton isPolish={langReducer.isPolish} onClick={() => setLanguage(!langReducer.isPolish)}/>
+            </NavItem>
           </NavMenu>
         </NavBarContainer>
       </Nav>
@@ -52,4 +58,14 @@ const NavBar = ({ toggle }) => {
   )
 }
 
-export default NavBar
+const mapStateToProps = ({langReducer}) => {
+  return {langReducer};
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setLanguage: (isPolish) => dispatch(setLanguage(isPolish))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

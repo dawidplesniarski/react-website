@@ -8,6 +8,7 @@ import {
   ContactPageDescriptionH1, ContactPageDescriptionH2, ContactPageDescriptionParagraph, ContactPageDescriptionWrapper
 } from "../Components/Molecules/MapItem/MapItem.styles"
 import EmailForm from "../Components/Molecules/EmailForm/EmailForm"
+import LangButton from "../Components/Atoms/LangButton/LangButton"
 
 const ContactPage = () => {
   const [isOpen, setIsOpen] = useState(false)

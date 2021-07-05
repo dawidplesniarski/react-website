@@ -4,8 +4,8 @@ import SideBar from "../Components/Molecules/SideBar/SideBar"
 import HeroSection from "../Components/Molecules/HeroSection/HeroSection"
 import ServicesSection from "../Components/Molecules/ServicesSection/ServicesSection"
 import Footer from "../Components/Molecules/Footer/Footer"
-
-const MainPage = () => {
+import {connect} from "react-redux";
+const MainPage = ({langReducer}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
@@ -23,4 +23,8 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+const mapStateToProps = ({langReducer}) => {
+  return {langReducer};
+}
+
+export default connect(mapStateToProps)(MainPage);
