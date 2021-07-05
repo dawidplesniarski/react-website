@@ -30,12 +30,12 @@ const NavBar = ({ toggle, langReducer, setLanguage }) => {
           <NavMenu>
             <NavItem>
               <NavLinks to={"/"}>
-                Strona główna
+                {langReducer.isPolish ? 'Strona główna' : 'Home'}
               </NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to={"/about"}>
-                O nas
+                {langReducer.isPolish ? 'O nas' : 'Über uns'}
               </NavLinks>
             </NavItem>
             <NavItem>
@@ -45,7 +45,7 @@ const NavBar = ({ toggle, langReducer, setLanguage }) => {
             </NavItem>
             <NavItem>
               <NavScroll to={"ServicesSection"}>
-                Usługi
+                {langReducer.isPolish ? 'Usługi' : 'Dienstleistungen'}
               </NavScroll>
             </NavItem>
             <NavItem>

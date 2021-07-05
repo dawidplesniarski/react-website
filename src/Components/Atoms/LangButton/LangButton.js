@@ -6,8 +6,8 @@ import germanFlag from '../../../Assets/Icons/germany.png';
 const LangButton = ({isPolish, onClick}) => {
   return(
     <>
-      <StyledLangButton>
-        {isPolish ? <StyledLangIcon src={polishFlag} alt={'flag icon'}/> : <StyledLangIcon src={germanFlag} alt={'flag icon'}/>}
+      <StyledLangButton onClick={onClick}>
+        {!isPolish ? <StyledLangIcon src={polishFlag} alt={'flag icon'}/> : <StyledLangIcon src={germanFlag} alt={'flag icon'}/>}
       </StyledLangButton>
     </>
   );
