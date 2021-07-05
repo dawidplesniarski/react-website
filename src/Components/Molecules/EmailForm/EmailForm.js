@@ -4,6 +4,7 @@ import Input from "../../Atoms/Input/Input"
 import { Button } from "../../Atoms/Button/Button.styles"
 import { ContactPageDescriptionH2 } from "../MapItem/MapItem.styles"
 import TextArea from "../../Atoms/TextArea/TextArea"
+import { validateEmail } from "../../../Utils/utils"
 
 const EmailForm = () => {
   const [fromName, setFromName] = useState("")
@@ -11,15 +12,20 @@ const EmailForm = () => {
   const [message, setMessage] = useState("")
 
   const onSubmit = () => {
-    alert(`Wiadomość z adresu ${fromEmail} została pomyślnie wysłana!`)
     const templateId = "template_0iauu7h"
     const serviceId = "service_qzuqz79"
-    sendFeedback(serviceId, templateId, { from_name: fromName, message: message, reply_to: fromEmail })
+    if(validateEmail(fromEmail)) {
+      sendFeedback(serviceId, templateId, { from_name: fromName, message: message, reply_to: fromEmail })
+    } else {
+      alert("Wrong E-mail address!");
+    }
   }
 
   const sendFeedback = (serviceId, templateId, variables) => {
     window.emailjs.send(serviceId, templateId, variables).then(res => {
-      alert("Email successfully sent!")
+      if(res) {
+        alert(`Wiadomość z adresu ${fromEmail} została pomyślnie wysłana!`)
+      }
     })
       .catch(err => alert("There has been an error.  Here some thoughts on the error that occured:", err))
   }
