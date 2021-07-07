@@ -3,6 +3,7 @@ import SideBar from "../../Components/Molecules/SideBar/SideBar"
 import NavBar from "../../Components/Molecules/NavBar/NavBar"
 import { connect } from "react-redux"
 import Footer from "../../Components/Molecules/Footer/Footer"
+import BathRoomGallery from "../../Components/Molecules/ServicesGallery/BathRoomGallery"
 
 const BathRoomPage = ({langReducer}) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +16,7 @@ const BathRoomPage = ({langReducer}) => {
     <>
       <SideBar isOpen={isOpen} toggle={toggle}/>
       <NavBar toggle={toggle}/>
-      BathRoom page
+      <BathRoomGallery/>
       <Footer/>
     </>
   );
