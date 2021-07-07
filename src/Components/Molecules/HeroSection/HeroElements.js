@@ -67,17 +67,17 @@ export const HeroH1 = styled.h1`
 export const HeroParagraph = styled.p`
   margin-top: 24px;
   color: #fff;
-  font-size: 24px;
+  font-size: 26px;
   text-align: center;
   max-width: 600px;
   text-shadow: 1px 0 0 #7c7c7c, 0 -1px 0 #7c7c7c, 0 1px 0 #7c7c7c, -1px 0 0 #7c7c7c;
   
   @media screen and (max-width: 580px) {
-    font-size: 18px;
+    font-size: 20px;
   }
   
   @media screen and (max-width: 400px) {
-    font-size: 16px;
+    font-size: 18px;
   }
 `;
 

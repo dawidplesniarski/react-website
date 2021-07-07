@@ -19,15 +19,23 @@ export const servicesSectionTitle_DE = 'Unsere Dienstleistungen';
 // 1
 export const servicesSection1_PL = 'Instalacje sanitarne';
 export const servicesSection1_DE = 'Bad, Fliesen & Glas';
+export const servicesSectionDescription1_PL = 'Kompleksowy remont łazienki, instalacje sanitarne, flizy oraz ogrzewanie podłogowe';
+export const servicesSectionDescription1_DE = 'Umfassende Renovierung von Bad, Sanitäranlagen, Fliesen und Fußbodenheizung';
 // 2
 export const servicesSection2_PL = 'Instalacje elektryczne';
 export const servicesSection2_DE = 'Elektroinstallationen';
+export const servicesSectionDescription2_PL = 'Wykonamy instalacje elektryczne, usuniemy awarie oraz zamontujemy oświetlenie LED';
+export const servicesSectionDescription2_DE = 'Wir machen Elektroinstallationen, beseitigen Störungen und installieren LED-Beleuchtung';
 // 3
 export const servicesSection3_PL = 'Kompleksowe remonty';
 export const servicesSection3_DE = 'Renovierungen';
+export const servicesSectionDescription3_PL = 'Wszelkie prace remontowe takie jak podłogi, ściany, ogrzewanie i wiele więcej';
+export const servicesSectionDescription3_DE = 'Jegliche Renovierungsarbeiten wie Böden, Wände, Heizung und vieles mehr';
 // 4
 export const servicesSection4_PL = 'Ocieplenia natryskowe';
 export const servicesSection4_DE = 'Isolierung PUR';
+export const servicesSectionDescription4_PL = 'Wydajne ocieplenia natryskowe pianą PUR pozwolą zaoszczędzić pieniądze na ogrzewaniu!';
+export const servicesSectionDescription4_DE = 'Effiziente Spritzisolierung mit PUR-Schaum spart Heizkosten und hält die richtige Temperatur!';
 // Button
 export const servicesSectionButton_PL = 'Sprawdź';
 export const servicesSectionButton_DE = 'Prüfen';

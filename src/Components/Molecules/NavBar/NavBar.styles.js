@@ -79,7 +79,7 @@ export const NavLinks = styled(LinkR)`
   height: 100%;
   cursor: pointer;
   
-  &:active {
+  &:hover {
     border-bottom: 3px solid #01bf71;
   }
 `;
@@ -93,7 +93,7 @@ export const NavScroll = styled(LinkScroll)`
   height: 100%;
   cursor: pointer;
   
-  &:active {
+  &:hover {
     border-bottom: 3px solid #01bf71;
   }
 `;

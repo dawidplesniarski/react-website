@@ -39,7 +39,7 @@ const Footer = () => {
             </StyledFooterItemRow>
             <StyledFooterItemRow>
               <StyledEmailIcon/>
-              <a href={'piort.tyka@gmail.com'}>piotr.tyka@gmail.com</a>
+              <span>piotr.tyka@gmail.com</span>
             </StyledFooterItemRow>
           </StyledFooterItem>
         </StyledFooterContainer>
